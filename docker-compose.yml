@@ -2,10 +2,8 @@ version: "3"
 services:
   wolweb:
     container_name: wolweb
-    image: "ghcr.io/sameerdhoot/wolweb"
+    image: ghcr.io/sameerdhoot/wolweb:latest
     restart: always
-    volumes:
-      - ./devices.json:/wolweb/devices.json
     ports:
       - 8089:8089
     network_mode: host
