@@ -1,0 +1,17 @@
+version: "3"
+services:
+  wolweb:
+    container_name: wolweb
+    image: "ghcr.io/sameerdhoot/wolweb"
+    restart: always
+    volumes:
+      - ./devices.json:/wolweb/devices.json
+    ports:
+      - 8089:8089
+    network_mode: host
+    environment:
+      WOLWEBHOST: "0.0.0.0"
+      WOLWEBPORT: "8089"
+      #WOLWEBDIR: "/wolweb"
+      WOLWEBBCASTIP: ${WOLWEBCASTIP}
+    env_file: stack.env
